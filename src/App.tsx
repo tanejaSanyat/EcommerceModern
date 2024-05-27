@@ -4,6 +4,7 @@ const Home = lazy(()=> import("./pages/home.tsx" ))
 const Cart  = lazy(()=> import("./pages/cart.tsx")) 
 const Search = lazy(()=> import("./pages/search.tsx")) 
 import Loader from './components/loader.tsx'
+import Header from './components/header.tsx'
 const Dashboard = lazy(() => import("./pages/admin/dashboard.tsx"));
 const Products = lazy(() => import("./pages/admin/products.tsx"));
 const Customers = lazy(() => import("./pages/admin/customers.tsx"));
@@ -24,6 +25,7 @@ const TransactionManagement = lazy(
 const App = () => {
   return (
     <Router>
+      <Header/>
         <Suspense fallback={<Loader/>}>
         <Routes>
         <Route path='/' element = {<Home/>} />
